@@ -39,7 +39,7 @@ elasticsearch:
     ##
     persistence:
       name: data
-      enabled: false
+      enabled: true
       ## wordpress data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
       ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -47,11 +47,11 @@ elasticsearch:
       ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
       ##   GKE, AWS & OpenStack)
       ##
-      # storageClass: "-"
+      storageClass: "-"
       ##
       ## If you want to reuse an existing claim, you can pass the name of the PVC using
       ## the existingClaim variable
-      # existingClaim: your-claim
+      existingClaim: esdata
       accessMode: ReadWriteOnce
       size: 10Gi
 
@@ -80,7 +80,7 @@ kibana:
     # SERVER_DEFAULTROUTE: "/app/kibana"
 
   # use configmap for its env configmap
-  envConfigMap: 
+  envConfigMap:
     enabled: true
     # name:  kibana
 
@@ -114,7 +114,7 @@ kibana:
       #   hosts:
       #     - chart-example.local
 
-  resources: {}  
+  resources: {}
     # limits:
     #   cpu: 100m
     #   memory: 300Mi

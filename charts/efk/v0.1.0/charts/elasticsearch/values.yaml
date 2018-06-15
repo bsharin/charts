@@ -39,7 +39,7 @@ elasticsearch:
     ##
     persistence:
       name: data
-      enabled: false
+      enabled: true
       ## wordpress data Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
       ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -51,6 +51,6 @@ elasticsearch:
       ##
       ## If you want to reuse an existing claim, you can pass the name of the PVC using
       ## the existingClaim variable
-      # existingClaim: your-claim
+      existingClaim: esdata
       accessMode: ReadWriteOnce
       size: 10Gi

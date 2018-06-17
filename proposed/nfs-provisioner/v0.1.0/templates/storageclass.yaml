@@ -15,4 +15,3 @@ provisioner: local.net/{{ template "nfs.fullname" . }}
 parameters:
   mountOptions: "vers=4.1"
   gid: "1000"
-  uid: "1000"
